@@ -101,6 +101,16 @@ const DATA: Record<number, BwData> = {
   imports: [ScrollRevealDirective],
 })
 export class DemoComponent {
+  readonly legendItems = [
+    { color: '#666',     label: 'Edge-only',   diamond: false },
+    { color: '#555',     label: 'Server-only', diamond: false },
+    { color: '#4A90D9',  label: 'H.264',       diamond: false },
+    { color: '#9B6AE0',  label: 'DCVC-FM',     diamond: false },
+    { color: '#E8A820',  label: 'LimitNet',    diamond: false },
+    { color: '#5BA85A',  label: 'DeepCOD',     diamond: false },
+    { color: '#CFB991',  label: 'ApproxBit',   diamond: true  },
+  ];
+
   readonly bwOptions = [
     { bw: 3,  label: '3 Mbps',  sub: 'Satellite'   },
     { bw: 6,  label: '6 Mbps',  sub: '3G Network'  },
@@ -123,11 +133,7 @@ export class DemoComponent {
           animation: { duration: 600, easing: 'easeInOutQuart' },
           plugins: {
             legend: {
-              labels: {
-                color: '#8A8070',
-                font: { family: 'DM Mono', size: 11 },
-                usePointStyle: true,
-              },
+              display: false,
             },
             tooltip: {
               backgroundColor: '#1E1E1E',

@@ -24,9 +24,20 @@
 
     <div appScrollReveal class="chart-wrap reveal" style="transition-delay: 0.15s;">
       <div class="chart-title">Accuracy vs. Speed — MViTv2 Model, SSv2 Dataset</div>
+      <div class="chart-legend">
+        @for (item of legendItems; track item.label) {
+          <div class="legend-item">
+            @if (item.diamond) {
+              <span class="legend-diamond" [style.background]="item.color"></span>
+            } @else {
+              <span class="legend-dot" [style.background]="item.color"></span>
+            }
+            <span class="legend-label" [style.color]="item.color">{{ item.label }}</span>
+          </div>
+        }
+      </div>
       <div class="chart-subtitle">
         Upper-left = <strong style="color: var(--text)">BEST</strong> (fast AND accurate).
-        <span class="winner-badge">● ApproxBit</span> dominates.
       </div>
       <div class="chart-container">
         <canvas #chartCanvas></canvas>
