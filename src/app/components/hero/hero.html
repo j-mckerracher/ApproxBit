@@ -1,0 +1,17 @@
+<section id="hero">
+  <canvas id="hero-canvas" #canvasRef></canvas>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Purdue University × SenSys '26</div>
+    <h1 class="hero-title">APPROX<span>BIT</span></h1>
+    <p class="hero-sub">What if your phone could analyze video — even on a bad connection — without slowing down or losing accuracy? That's exactly what ApproxBit does.</p>
+    <div class="hero-stat-row">
+      @for (stat of stats; track stat.num) {
+        <div class="hero-stat">
+          <div class="hero-stat-num">{{ stat.num }}</div>
+          <div class="hero-stat-label">{{ stat.label }}</div>
+        </div>
+      }
+    </div>
+    <a href="#demo" class="hero-cta">See It In Action ↓</a>
+  </div>
+</section>

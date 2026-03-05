@@ -1,0 +1,48 @@
+#how { background: var(--black); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step-card {
+  padding: 2rem;
+  background: var(--surface);
+  border-top: 2px solid var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.step-card::before {
+  content: attr(data-step);
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  color: var(--surface2);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.step-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.step-body {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: 300;
+}

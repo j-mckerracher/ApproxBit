@@ -1,0 +1,43 @@
+<section id="demo">
+  <div class="container">
+    <div appScrollReveal class="reveal">
+      <div class="section-label">Interactive Demo</div>
+      <h2 class="section-title">Change the <span>network speed.</span><br>See who wins.</h2>
+      <p class="section-body">Adjust the network speed below. Watch how each method's speed and accuracy change. ApproxBit's results are based on real measurements from the research paper.</p>
+    </div>
+
+    <div appScrollReveal class="demo-controls reveal" style="margin-top: 2.5rem;">
+      <div class="control-row">
+        <div class="control-label">📡 Network Speed</div>
+        <div class="toggle-group">
+          @for (opt of bwOptions; track opt.bw) {
+            <button
+              class="toggle-btn"
+              [class.active]="selectedBw() === opt.bw"
+              (click)="selectBw(opt.bw)">
+              {{ opt.label }}<br><span style="font-size:0.6rem;opacity:0.7">{{ opt.sub }}</span>
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div appScrollReveal class="chart-wrap reveal" style="transition-delay: 0.15s;">
+      <div class="chart-title">Accuracy vs. Speed — MViTv2 Model, SSv2 Dataset</div>
+      <div class="chart-subtitle">
+        Upper-left = <strong style="color: var(--text)">BEST</strong> (fast AND accurate).
+        <span class="winner-badge">● ApproxBit</span> dominates.
+      </div>
+      <div class="chart-container">
+        <canvas #chartCanvas></canvas>
+      </div>
+      <div style="font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--text-muted); margin-top: 1rem; letter-spacing: 0.08em;">
+        X-AXIS: Total time (ms) — less is better &nbsp;|&nbsp; Y-AXIS: Accuracy (%) — more is better &nbsp;|&nbsp; Data from: Table 1, ApproxBit SenSys '26
+      </div>
+    </div>
+
+    <div appScrollReveal class="comparison-callout reveal" style="transition-delay: 0.2s; margin-top: 0;">
+      <strong>What you're seeing:</strong> On slow satellite connections (3 Mbps), most competing methods are actually <em>slower</em> than just running the AI on the device — making offloading pointless. ApproxBit is the only method that's both faster <em>and</em> competitive in accuracy across all network conditions.
+    </div>
+  </div>
+</section>

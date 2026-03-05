@@ -1,0 +1,57 @@
+<section id="problem">
+  <div class="container">
+    <div class="reveal" appScrollReveal>
+      <div class="section-label">The Challenge</div>
+      <h2 class="section-title">Video is <span>heavy.</span><br>Networks are not.</h2>
+      <p class="section-body">Cameras on drones, phones, and security systems capture rich video. But analyzing that video requires enormous computing power — far beyond what a small device can handle. Sending the full video to a powerful server works, but on a slow network, it's painfully slow.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="reveal" appScrollReveal style="transition-delay: 0.1s">
+        <div style="margin-bottom: 2rem;">
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; margin-bottom: 1rem;">
+            The existing approaches all have painful trade-offs. Either you run the heavy AI model entirely on your device (slow), send raw video to a server (eats up bandwidth), or compress the video so much that accuracy drops.
+          </p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; font-weight: 300;">
+            ApproxBit finds the sweet spot: it splits the work intelligently between the device and the cloud, and sends only a tiny compressed "fingerprint" of the video — not the video itself.
+          </p>
+        </div>
+
+        <div class="comparison-callout">
+          <strong>Real example:</strong> Recognizing what action a person is doing in a 64-frame video clip requires 38.2 trillion math operations. A modern phone can only do 2 trillion per second. That's a 16× gap — ApproxBit bridges it.
+        </div>
+      </div>
+
+      <div class="reveal" appScrollReveal style="transition-delay: 0.2s">
+        <!-- Animated pipeline comparison -->
+        <div class="pipeline-viz">
+          <div class="pipeline-label">Old Way — Full Video Transfer</div>
+          <div class="pipe-row">
+            <div class="pipe-node" style="border-color: var(--surface3); color: var(--text-muted);">📱 Device</div>
+            <div class="pipe-arrow">→</div>
+            <div class="transfer-bar-wrap" style="flex:1">
+              <div class="transfer-bar" style="background: var(--accent-red); width: 100%;"></div>
+            </div>
+            <div class="pipe-arrow">→</div>
+            <div class="pipe-node" style="border-color: var(--surface3); color: var(--text-muted);">☁ Server</div>
+          </div>
+          <div style="text-align: center; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--accent-red); margin-bottom: 1.5rem; letter-spacing: 0.1em;">~ 400MB — SLOW ON BAD NETWORKS</div>
+
+          <div class="pipeline-label">ApproxBit Way — Binary Fingerprint</div>
+          <div class="pipe-row">
+            <div class="pipe-node" style="border-color: var(--gold); color: var(--gold);">📱 Device</div>
+            <div class="pipe-arrow" style="color: var(--gold);">→</div>
+            <div class="pipe-node" style="border-color: var(--gold); color: var(--gold); font-size: 0.65rem;">🔬 Compress</div>
+            <div class="pipe-arrow" style="color: var(--gold);">→</div>
+            <div class="transfer-bar-wrap" style="flex:1">
+              <div class="transfer-bar" style="background: var(--gold); width: 5%;"></div>
+            </div>
+            <div class="pipe-arrow" style="color: var(--gold);">→</div>
+            <div class="pipe-node" style="border-color: var(--gold); color: var(--gold);">☁ Server</div>
+          </div>
+          <div style="text-align: center; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--gold); letter-spacing: 0.1em;">~ 3KB — WORKS ANYWHERE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

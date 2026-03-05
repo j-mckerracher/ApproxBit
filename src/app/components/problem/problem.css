@@ -1,0 +1,72 @@
+#problem { background: var(--surface); }
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .problem-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.pipeline-viz {
+  background: var(--surface2);
+  border: 1px solid var(--surface3);
+  padding: 2rem;
+  position: relative;
+}
+
+.pipeline-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.pipe-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.pipe-node {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-family: 'DM Mono', monospace;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.pipe-arrow {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.pipe-data {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.transfer-bar-wrap {
+  height: 6px;
+  background: var(--surface3);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+  flex: 1;
+}
+
+.transfer-bar {
+  height: 100%;
+  border-radius: 3px;
+  animation: pulse-bar 2s ease-in-out infinite;
+}

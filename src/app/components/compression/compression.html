@@ -1,0 +1,36 @@
+<section id="compression">
+  <div class="container">
+    <div class="reveal" appScrollReveal>
+      <div class="section-label">The Secret Sauce</div>
+      <h2 class="section-title">Sending a <span>fingerprint,</span><br>not the full video.</h2>
+      <p class="section-body">Instead of sending video frames or huge data tables, ApproxBit converts the AI's "understanding" of the video into a tiny string of 1s and 0s — a binary fingerprint. See how the transfer sizes compare.</p>
+    </div>
+
+    <div style="background: var(--surface2); padding: 2rem; margin-top: 3rem;" class="reveal" appScrollReveal>
+      <div style="font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 2rem;">Data transferred per video clip — smaller is better</div>
+      <div class="compress-track" id="compress-track">
+        @for (item of compressItems; track item.method) {
+          <div class="compress-item">
+            <div
+              class="compress-bar"
+              [style.height.px]="item.logH"
+              [style.background]="item.color"
+            >
+              <span class="compress-size-label" [style.color]="item.color">{{ item.sizeLabel }}</span>
+            </div>
+            <div class="compress-method-label" [style.color]="item.isApproxBit ? '#CFB991' : '#5A5040'">
+              @for (line of item.methodLines; track line; let last = $last) {
+                <span>{{ line }}</span>@if (!last) {<br>}
+              }
+            </div>
+            <div class="compress-acc" [style.color]="item.isApproxBit ? '#CFB991' : '#8A8070'">{{ item.acc }}</div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="comparison-callout reveal" appScrollReveal style="margin-top: 2rem;">
+      <strong>ApproxBit's smallest configuration sends just 3.1 KB</strong> — that's smaller than most text emails. Yet the AI still achieves 69.2% accuracy, only 1.6% below the theoretical maximum. The competing method (DeepCOD) needs 50× more data for slightly <em>worse</em> accuracy.
+    </div>
+  </div>
+</section>

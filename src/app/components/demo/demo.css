@@ -1,0 +1,93 @@
+#demo { background: var(--black); }
+
+.demo-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: var(--surface);
+  border-left: 3px solid var(--gold);
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.control-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-width: 160px;
+}
+
+.toggle-group { display: flex; gap: 0.5rem; }
+
+.toggle-btn {
+  padding: 0.5rem 1.2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  background: var(--surface2);
+  color: var(--text-muted);
+  border: 1px solid var(--surface3);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+}
+
+.toggle-btn.active {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+.toggle-btn:hover:not(.active) {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.chart-wrap {
+  background: var(--surface);
+  padding: 2rem;
+  position: relative;
+}
+
+.chart-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.chart-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.winner-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.6rem;
+  text-transform: uppercase;
+  margin-left: 0.75rem;
+  vertical-align: middle;
+}
+
+.chart-container {
+  position: relative;
+  height: 420px;
+}

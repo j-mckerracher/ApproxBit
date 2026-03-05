@@ -1,0 +1,21 @@
+<section id="how">
+  <div class="container">
+    <div appScrollReveal>
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Three smart <span>tricks.</span></h2>
+      <p class="section-body">ApproxBit is built on three innovations that work together to deliver fast, accurate video analysis regardless of your network quality.</p>
+    </div>
+
+    <div class="steps-grid">
+      @for (step of steps; track step.num) {
+        <div class="step-card" appScrollReveal
+          [attr.data-step]="step.num"
+          [style.transition-delay]="step.delay">
+          <div class="step-icon">{{ step.icon }}</div>
+          <div class="step-title">{{ step.title }}</div>
+          <p class="step-body">{{ step.body }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
